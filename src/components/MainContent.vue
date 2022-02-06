@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="text-lg bg-white h-96 p-3 rounded-lg">
-        <p class="font-bold text-blue-500">Feedback:</p>
+        <p class="font-bold text-blue-500">Companies:</p>
         <p class="text-4xl p-2">0</p>
         <p class="text-gray-500">No Data</p>
         <div class="flex justify-between items-center">
@@ -102,7 +102,7 @@
         </div>
       </div>
       <div class="text-lg bg-white h-96 p-3 rounded-lg">
-        <p class="font-bold text-blue-500">Feedback:</p>
+        <p class="font-bold text-blue-500">Contributors:</p>
         <p class="text-4xl p-2">0</p>
         <p class="text-gray-500">No Data</p>
         <div class="flex justify-between items-center">
