@@ -22,37 +22,14 @@
       <Sidebar />
     </div>
     <div class="flex-1">
-      <div class="bg-white shadow px-2 py-4">
-        <div class="flex items-center">
-          <button class="md:hidden" @click="showSidebar = !showSidebar">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-8"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </button>
-          <Header />
-        </div>
-      </div>
-      <div id="main-content" class="p-8 min-h-screen">
-        <MainContent />
-      </div>
+      <router-view />
     </div>
   </div>
 </template>
 
 <script>
 import Sidebar from "./Sidebar.vue";
-import Header from "./Header.vue";
-import MainContent from "./MainContent.vue";
-import { ref } from "vue";
+// import Dashboard from "./Dashboard.vue";
 export default {
   name: "Home",
   props: {
@@ -60,14 +37,7 @@ export default {
   },
   components: {
     Sidebar,
-    Header,
-    MainContent,
-  },
-  setup() {
-    const showSidebar = ref(false);
-    return {
-      showSidebar,
-    };
+    // Dashboard,
   },
 };
 </script>

@@ -11,16 +11,18 @@
     </div>
     <div>
       <ul class="font-bold text-lg">
-        <li
+        <router-link
+          to="/"
           class="
             mt-10
             mb-3
             px-6
             flex
             items-center
+            hover:bg-white
             rounded-full
             p-1.5
-            bg-blue-500
+            hover:text-black
           "
         >
           <span
@@ -35,8 +37,10 @@
               /></svg
           ></span>
           Dashboard
-        </li>
-        <li
+        </router-link>
+
+        <router-link
+          to="/feedback"
           class="
             my-5
             mx-6
@@ -57,13 +61,14 @@
             >
               <path
                 fill-rule="evenodd"
-                d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z"
+                d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
                 clip-rule="evenodd"
               /></svg
           ></span>
           Feedback
-        </li>
-        <li
+        </router-link>
+        <router-link
+          to="impact"
           class="
             my-5
             mx-6
@@ -89,8 +94,9 @@
               /></svg
           ></span>
           Impact
-        </li>
-        <li
+        </router-link>
+        <router-link
+          to="companies"
           class="
             my-5
             mx-6
@@ -119,35 +125,10 @@
               /></svg
           ></span>
           Companies
-        </li>
-        <li
-          class="
-            my-5
-            mx-6
-            flex
-            items-center
-            hover:bg-white
-            rounded-full
-            p-1.5
-            hover:text-black
-          "
-        >
-          <span
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-7"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
-                clip-rule="evenodd"
-              /></svg
-          ></span>
-          Contributors
-        </li>
-        <li
+        </router-link>
+
+        <router-link
+          to="release"
           class="
             my-5
             mx-6
@@ -176,7 +157,65 @@
               /></svg
           ></span>
           Release Notes
-        </li>
+        </router-link>
+        <div
+          class="my-5 mx-6 hover:bg-white rounded-full p-1.5 hover:text-black"
+        >
+          <div class="flex items-center cursor-pointer" @click="open = !open">
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-7"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                  clip-rule="evenodd"
+                /></svg
+            ></span>
+            Contributors
+            <svg
+              v-if="open"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-8"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <svg
+              v-if="!open"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-8"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <div v-if="open" class="absolute bg-white rounded-lg mt-4">
+            <router-link
+              to="/admin"
+              class="block text-gray-500 px-6 ml-4 text-end my-1"
+              >Admin</router-link
+            >
+            <router-link
+              to="user"
+              class="text-gray-500 px-6 ml-4 text-end block my-1"
+              >User</router-link
+            >
+          </div>
+        </div>
       </ul>
     </div>
   </div>
@@ -185,6 +224,11 @@
 <script>
 export default {
   name: "Sidebar",
+  data() {
+    return {
+      open: false,
+    };
+  },
 };
 </script>
 

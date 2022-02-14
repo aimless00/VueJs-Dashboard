@@ -1,15 +1,12 @@
 <template>
-  <home />
+  <router-view></router-view>
 </template>
 
 <script>
-import Home from "./components/Home.vue";
 import "./assets/tailwind.css";
 export default {
   name: "App",
-  components: {
-    Home,
-  },
+  components: {},
 };
 </script>
 
