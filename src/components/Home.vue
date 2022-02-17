@@ -5,7 +5,6 @@
       class="
         absolute
         md:w-72
-        rounded
         inset-y-0
         left-0
         md:relative md:-translate-x-0

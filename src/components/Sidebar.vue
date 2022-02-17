@@ -10,8 +10,9 @@
       <h1 class="px-4 text-2xl font-bold">Digital Oma</h1>
     </div>
     <div>
-      <ul class="font-bold text-lg">
+      <ul class="font-semibold text-base">
         <router-link
+          active-class="actives"
           to="/"
           class="
             mt-10
@@ -41,6 +42,7 @@
 
         <router-link
           to="/feedback"
+          active-class="active"
           class="
             my-5
             mx-6
@@ -69,6 +71,7 @@
         </router-link>
         <router-link
           to="impact"
+          active-class="active"
           class="
             my-5
             mx-6
@@ -96,6 +99,7 @@
           Impact
         </router-link>
         <router-link
+          active-class="active"
           to="companies"
           class="
             my-5
@@ -129,6 +133,7 @@
 
         <router-link
           to="release"
+          active-class="active"
           class="
             my-5
             mx-6
@@ -161,7 +166,11 @@
         <div
           class="my-5 mx-6 hover:bg-white rounded-full p-1.5 hover:text-black"
         >
-          <div class="flex items-center cursor-pointer" @click="open = !open">
+          <div
+            class="flex items-center cursor-pointer"
+            @click="open = !open"
+            active-class="active"
+          >
             <span
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -203,17 +212,48 @@
               />
             </svg>
           </div>
-          <div v-if="open" class="absolute bg-white rounded-lg mt-4">
-            <router-link
-              to="/admin"
-              class="block text-gray-500 px-6 ml-4 text-end my-1"
-              >Admin</router-link
-            >
-            <router-link
-              to="user"
-              class="text-gray-500 px-6 ml-4 text-end block my-1"
-              >User</router-link
-            >
+          <div v-if="open" class="absolute bg-white rounded-lg mt-4 w-48">
+            <div class="flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-gray-500 ml-2"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
+                />
+              </svg>
+              <router-link
+                active-class="sub-active"
+                to="/admin"
+                class="block text-gray-500 px-1 text-end my-1"
+              >
+                Admin</router-link
+              >
+            </div>
+            <div class="flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-gray-500 ml-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                /></svg
+              ><router-link
+                active-class="sub-active"
+                to="/user"
+                class="block text-gray-500 px-2 text-end my-1"
+              >
+                User</router-link
+              >
+            </div>
           </div>
         </div>
       </ul>
@@ -233,4 +273,17 @@ export default {
 </script>
 
 <style>
+.active {
+  background-color: white;
+  color: #000;
+}
+.sub-active {
+  background-color: wheat;
+  width: 130px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.actives {
+  background-color: #7e93c7;
+}
 </style>
