@@ -13,6 +13,7 @@
       <ul class="font-semibold text-base">
         <router-link
           to="/"
+          @click="open = !open"
           class="
             mt-10
             mb-3
@@ -40,6 +41,7 @@
         </router-link>
 
         <router-link
+          @click="open = !open"
           to="/feedback"
           active-class="active"
           class="
@@ -69,6 +71,7 @@
           Feedback
         </router-link>
         <router-link
+          @click="open = !open"
           to="impact"
           active-class="active"
           class="
@@ -98,6 +101,7 @@
           Impact
         </router-link>
         <router-link
+          @click="open = !open"
           active-class="active"
           to="companies"
           class="
@@ -131,6 +135,7 @@
         </router-link>
 
         <router-link
+          @click="open = !open"
           to="release"
           active-class="active"
           class="
