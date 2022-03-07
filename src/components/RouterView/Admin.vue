@@ -1,5 +1,5 @@
 <template>
-  <div id="main-content" class="min-h-screen">
+  <div id="" class="min-h-screen bg-gray-400">
     <div class="bg-white shadow px-2 py-4">
       <h1 class="text-3xl px-4 font-bold">Admin</h1>
     </div>

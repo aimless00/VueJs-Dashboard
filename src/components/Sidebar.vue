@@ -12,7 +12,6 @@
     <div>
       <ul class="font-semibold text-base">
         <router-link
-          active-class="actives"
           to="/"
           class="
             mt-10
@@ -212,7 +211,7 @@
               />
             </svg>
           </div>
-          <div v-if="open" class="absolute bg-white rounded-lg mt-4 w-48">
+          <div v-if="open" class="absolute bg-white rounded-lg mt-4 w-56 px-2">
             <div class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -227,7 +226,7 @@
               <router-link
                 active-class="sub-active"
                 to="/admin"
-                class="block text-gray-500 px-1 text-end my-1"
+                class="block text-gray-500 px-6 text-end my-1"
               >
                 Admin</router-link
               >
@@ -249,7 +248,7 @@
               ><router-link
                 active-class="sub-active"
                 to="/user"
-                class="block text-gray-500 px-2 text-end my-1"
+                class="block text-gray-500 px-6 text-end my-1"
               >
                 User</router-link
               >
@@ -280,7 +279,6 @@ export default {
 .sub-active {
   background-color: wheat;
   width: 130px;
-  border: 2px solid black;
   border-radius: 5px;
 }
 .actives {
